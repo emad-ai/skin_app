@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  align-content: center;
+}
+
+body {
+  padding-top: 60px;
+  padding-left: 10px;
+  background-color: darkblue;
+  color: #0b0101;
+  width: 98%;
+  text-align: center;
+  align-content: center;
+}
+
+
+html, body {
+    height: 100%; /* ضمان أن الصفحة تغطي كامل الشاشة */
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Header and Navigation  */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkcyan;
+  padding: 10px;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+  flex-direction: row;
+}
+
+.menu-icon span {
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.menu-icon .hhh {
+  position: fixed;
+  left: 40%;
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 30px;
+  left: 0;
+  background-color: darkcyan;
+  overflow-x: hidden;
+  transition: 0.5s ease;
+  padding-top: 40px;
+}
+
+.sidebar a {
+  background-color: #00ffff;
+  display: block;
+  margin:30px 50px;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  transition: 0.3s ease;
+  border-radius: 10px;
+}
+
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+/* Main content styling */
+#main-content {
+  flex: 1;
+  padding: 5px;
+  transition:0.5s ease;
+}
+
+/* Alert box */
+.alert-box {
+  background-color: #fff9e6;
+  border: 1px solid #ffc107;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+  position: relative;
+}
+
+.alert-box p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.warning-icon {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+section {
+   background-color: mediumturquoise;
+   border-radius: 8px;
+   padding: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ }
+section h1{
+  margin: 10px;
+}
+
+section label{
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Image Preview */
+.image-preview-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-preview-container img {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ 
+.custom-file-upload {
+  cursor: pointer;
+  padding: 10px 30px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  display: inline-block;
+  border: 2px solid #0056b3;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button {
+  background-color: darkgreen;
+  color: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: green;
+  transform: scale(1.05);
+}
+
+.img_res {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px;
+  border: 1px solid #caa0a0; 
+  border-radius: 10px;  
+  padding: 10px;
+
+}
+
+.img_res div {
+  width: 45%;  
+}
+
+.img_res h4 {
+  margin-bottom: 5px;
+}
+
+.img_res img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;  
+  border-radius: 10px;  
+  padding: 5px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+
+/* Diagnosis Section */
+.diagnosis {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.diagnosis-result {
+  background-color: dimgray;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.disease-name {
+  color: #ffffff; /* لون أحمر */
+  font-weight: bold;
+  font-size: 22px;
+}
+.diagnosis h2 {
+  margin-bottom: 10px;
+  /* margin-top: 20px; 
+  margin-bottom: 20; */
+  text-decoration: underline;
+}
+
+.diagnosis ul{
+  list-style: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.result-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.message {
+  color: rgb(234, 18, 18);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 1px gray;
+}
+/* تنسيق النصوص */
+.advice {
+  color: blue;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.treatment {
+  color: green;
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+
+.skin-footer {
+  background-color: #121212;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px 0;
+}
+
+.footer-column p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-description {
+  font-size: 14px;
+  color: #bbbbbb;
+}
+
+h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #8a67ff;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  color: #ffffff;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  color: #8a67ff;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbbbbb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.copyright {
+  flex: 1;
+  text-align: center;
+}
+
+.legal-links {
+  flex: 1;
+  text-align: center;
+}
+
+.legal-links a {
+  color: #8a67ff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* تحسين التصميم للأجهزة الصغيرة */
+@media (max-width: 768px) {
+  .footer-top, .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .legal-links {
+      margin-top: 10px;
+  }
+}

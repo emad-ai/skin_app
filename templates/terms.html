@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use - Skin Disease Diagnosis System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Common Styles */
+    :root {
+      --primary-color: #2A5C82;
+      --secondary-color: #5DA2D1;
+      --text-color: #333;
+      --background: #f5f7fa;
+      --white: #fff;
+      --warning-color: #FFE08A;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    body {
+      background-color: var(--background);
+      color: var(--text-color);
+      padding-top: 60px;
+      width: 98%;
+      direction: ltr;
+    }
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: darkcyan;
+      padding: 10px;
+      z-index: 1000;
+      border-bottom: 1px solid #ddd;
+    }
+    .menu-icon span {
+      font-size: 25px;
+      font-weight: bold;
+      color: black;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .menu-icon .hhh {
+      position: fixed;
+      left: 33%;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 30px;
+      left: 0;
+      background-color: darkcyan;
+      overflow-x: hidden;
+      transition: width 0.5s ease;
+      padding-top: 200px;
+    }
+    .sidebar a {
+      background-color: #00ffff;
+      display: block;
+      margin: 30px 50px;
+      padding: 20px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      transition: 0.3s ease;
+      border-radius: 10px;
+     
+    }
+    .sidebar a:hover {
+      background-color: #575757;
+      color: #fff;
+    }
+    /* تم حذف أيقونة الإغلاق من هنا */
+    
+    /* Terms Page Styles */
+    .legal-page {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .breadcrumb {
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      font-size: 0.9em;
+    }
+    .breadcrumb a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    article {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.2em;
+      margin-bottom: 20px;
+    }
+    h1 i {
+      margin-left: 10px;
+    }
+    .update-date {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 40px;
+      display: block;
+    }
+    section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 30px;
+    }
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    .warning {
+      background: var(--warning-color);
+      padding: 25px;
+      border-radius: 10px;
+      border-right: 4px solid #FFC107;
+      margin-top: 30px;
+    }
+    .warning h3 {
+      color: #856404;
+      margin-bottom: 15px;
+    }
+    .warning i {
+      color: #FFC107;
+      margin-left: 10px;
+    }
+    .skin-footer {
+      background-color: #121212;
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #333;
+    }
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px 0;
+    }
+    .footer-column p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .footer-description {
+      font-size: 14px;
+      color: #bbbbbb;
+    }
+    h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #8a67ff;
+    }
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .social-icon {
+      color: #ffffff;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+    .social-icon:hover {
+      color: #8a67ff;
+      transform: scale(1.1);
+    }
+    .footer-bottom {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #bbbbbb;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .copyright {
+      flex: 1;
+      text-align: center;
+    }
+    .legal-links {
+      flex: 1;
+      text-align: center;
+    }
+    .legal-links a {
+      color: #8a67ff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .legal-links a:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+    @media (max-width: 768px) {
+      .footer-top, .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .legal-links {
+        margin-top: 10px;
+      }
+      .legal-page {
+        margin: 30px auto;
+      }
+      article {
+        padding: 25px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+      .warning {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="menu-icon" onclick="toggleNav(event)">
+        <span>&#9776;</span>
+        <span class="hhh">Terms of Use</span>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Sidebar بدون أيقونة الإغلاق -->
+  <div id="sidebar" class="sidebar">
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <a href="/diagnose"><i class="fas fa-eye"></i> Diagnose</a>
+    <a href="/contact"><i class="fas fa-user"></i> Contact</a>
+  </div>
+  
+  <main class="legal-page">
+    
+    <article>
+      <h1><i class="fas fa-file-contract"></i> Terms of Use</h1>
+      <p class="update-date">Last Updated: January 1, 2025</p>
+      
+      <section>
+        <h2>Acceptance of Terms</h2>
+        <p>By using this website, you agree to abide by these terms and conditions.</p>
+      </section>
+      
+      <section>
+        <h2>Service Description</h2>
+        <ul>
+          <li>The website provides a preliminary diagnosis using artificial intelligence.</li>
+          <li>It is not a substitute for professional medical advice.</li>
+          <li>Accuracy is not guaranteed at 100%.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2> User Responsibilities</h2>
+        <ul>
+          <li>Provide accurate and correct information.</li>
+          <li>Do not use the system for illegal purposes.</li>
+          <li>Keep your account secure.</li>
+        </ul>
+      </section>
+      
+      <section class="warning">
+        <h3><i class="fas fa-exclamation-triangle"></i> Important Warning</h3>
+        <p>If you experience severe symptoms, seek medical attention immediately.</p>
+      </section>
+    </article>
+  </main>
+  
+  <footer class="skin-footer">
+    <div class="footer-top">
+      <div class="footer-column">
+        <p>Skin Disease Diagnosis Site</p>
+        <br>
+        <p class="footer-description">
+          Advanced Skin Disease Diagnosis System using AI
+        </p>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <div class="social-media">
+          <a href="https://t.me/emad_aladeep" class="social-icon telegram" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://wa.me/967775914784" class="social-icon whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:emadaladeep775@gmail.com" class="social-icon email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="copyright">
+        All Rights Reserved - Skin Disease Diagnosis System 2025 &copy;
+      </div>
+      <div class="legal-links">
+        <a href="/terms">Terms of Use</a>
+        <a href="/terms">Privacy Policy</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // دالة تبديل عرض الـ Sidebar عند الضغط على أيقونة القائمة
+    function toggleNav(event) {
+      event.stopPropagation(); // لمنع الحدث من الانتشار إلى المستند
+      var sidebar = document.getElementById("sidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "250px";
+      }
+    }
+    
+    // إغلاق الـ Sidebar عند النقر في أي مكان خارج منطقة القائمة
+    document.addEventListener('click', function(event) {
+      var sidebar = document.getElementById("sidebar");
+      var menuIcon = document.querySelector('.menu-icon');
+      // إذا كان الـ Sidebar مفتوحًا والنقر تم خارج الـ Sidebar وأيقونة القائمة
+      if (sidebar.style.width === "250px" && 
+          !event.target.closest('#sidebar') && 
+          !event.target.closest('.menu-icon')) {
+        sidebar.style.width = "0";
+      }
+    });
+  </script>
+</body>
+</html>

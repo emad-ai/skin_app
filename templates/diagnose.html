@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Skin Image Diagnosis System</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="stylesheet" href="./static/css/diagnose.css" />
+    </head>
+    <body>
+        {#} Header #}
+        <header>
+            <nav>
+                <div class="menu-icon" onclick="toggleNav(event)">
+                    <span>&#9776;</span>
+                    <span class="hhh">SkinPox</span>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="/diagnose" class="nav-link"><i class="fas fa-eye"></i> Diagnose</a>
+            <a href="/contact" class="nav-link"><i class="fas fa-person"></i> Contact</a>
+        </div>
+     
+        {# Main Content #}
+        <div id="main-content">
+            <div class="alert-box">
+                <p>
+                    <i class="warning-icon">!</i>
+                    Warning: Please be cautious of contagious skin diseases like **smallpox**. Avoid direct contact with
+                    infected individuals and seek medical attention if you notice a rash or similar symptoms.
+                </p>
+                <span class="close-btn">&times;</span>
+            </div>
+
+            <section>
+                <h1>Skin Image Diagnosis System</h1>
+                {# Form to upload the image #}
+                <form method="POST" enctype="multipart/form-data" action="/diagnose">
+                    <label for="file" class="custom-file-upload btn btn-primary">Select Image</label>
+                    <input
+                        type="file"
+                        id="file"
+                        name="file"
+                        accept="image/*"
+                        style="display: none"
+                        onchange="previewImage(event)"
+                    />
+
+                    <!-- عرض الصورة بعد اختيارها -->
+                    <div class="image-preview-container">
+                        <img id="image-preview" src="" alt="Uploaded Image Preview" style="display: none" />
+                    </div>
+
+                    <br />
+                    <button type="submit" class="btn">Diagnose</button>
+                </form>
+
+                {# Diagnosis Result #} 
+                {% if diagnosis %}
+                <div class="diagnosis mt-3">
+                    <h1>Diagnosis Result</h1>
+
+                    <div class="diagnosis-result">
+                        <h3>The disease is : <span class="disease-name">{{ diagnosis }}</span></h3>
+                    </div>
+
+                    <div class="img_res">
+                        <!-- Display the Original Image -->
+                        <div>
+                            <h4>Original Image</h4>
+                            <img src="{{ image_url }}" alt="Uploaded Image" />
+                        </div>
+
+                        <!-- Display the Grad-CAM Image -->
+                        <div>
+                            <h4>Grad-CAM Image</h4>
+                            <img src="{{ gradcam_image }}" alt="Grad-CAM" />
+                        </div>
+                    </div>
+
+                    <div class="result-container">
+                        <h2>Predicted Disease and Advice:</h2>
+                        <p class="message"><strong>{{ message }}</strong></p>
+                        <p class="advice"><strong>Medical Advice:</strong> {{ advice }}</p>
+                        <p class="treatment"><strong>Treatment Guidelines:</strong> {{ treatment }}</p>
+                        <p class="sources"><strong> Sources :</strong> {{ sources }}</p>
+                    </div>
+                </div>
+                {% else %}
+                <div class="diagnosis mt-3">
+                    <h1>Diagnosis Result</h1>
+                    <p>Upload an image to get a result.</p>
+                </div>
+                {% endif %}
+            </section>
+        </div>
+
+        <footer class="skin-footer">
+          <div class="footer-top">
+            <div class="footer-column">
+              <p>Skin Disease Diagnosis Site </p><br>
+              <p class="footer-description">
+                Advanced Skin Disease Diagnosis system using AI
+              </p>
+            </div>
+          
+            <div class="footer-column">
+              <h4>  Contact </h4>
+              <div class="social-media">
+                <a href="https://t.me/emad_aladeep" class="social-icon telegram" target="_blank">
+                  <i class="fab fa-telegram"></i>
+                  <span>  </span>
+                </a>
+                <a href="https://wa.me/967775914784" class="social-icon whatsapp" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>  </span>
+                </a>
+                <a href="mailto:emadaladeep775@gmail.com" class="social-icon email">
+                  <i class="fas fa-envelope"></i>
+                  <span>   </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="footer-bottom">
+            <div class="copyright">
+              All Rights reserved - Skin Disease Diagnosis System 2025 © 
+            </div>
+            <div class="legal-links">
+              <a href="/terms">   Terms of Use    </a>
+              <a href="/">   Privacy Policy     </a>
+              <a href="/contact">   Contact Us    </a>
+            </div>
+          </div>
+        </footer>
+        
+    <script>
+        // دالة تبديل عرض الـ Sidebar
+        function toggleNav(event) {
+           event.stopPropagation();
+           var sidebar = document.getElementById("sidebar");
+           if (sidebar.style.width === "250px") {
+              sidebar.style.width = "0";
+           } else {
+              sidebar.style.width = "250px";
+           }
+        }
+        
+        // إغلاق الـ Sidebar عند النقر خارجها
+        document.addEventListener('click', function(event) {
+           var sidebar = document.getElementById("sidebar");
+           var menuIcon = document.querySelector('.menu-icon');
+           if (sidebar.style.width === "250px" && 
+               !event.target.closest('#sidebar') && 
+               !event.target.closest('.menu-icon')) {
+              sidebar.style.width = "0";
+           }
+        });
+      </script>
+    <script src="./static/main.js"></script>
+    </body>
+</html>

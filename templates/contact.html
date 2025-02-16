@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <title>Contact Us - Skin Disease Diagnosis System</title>
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #5DA2D1;
+            --text-color: #333;
+            --background: #f5f7fa;
+            --white: #fff;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-align: center;
+          align-content: center;
+          font-family: 'Times New Roman', Times, serif;
+        }
+        
+        body {
+          background-color: #00ffff;
+          color: #0b0101;
+          padding-top: 60px;
+          padding-left: 10px;
+          width: 98%;
+          text-align: center;
+          align-content: center;
+        }
+        
+        html, body {
+            height: 100%; /* Ensures the page covers the full screen */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: darkcyan;
+          padding: 10px;
+          z-index: 1000;
+          border-bottom: 1px solid #ddd;
+          flex-direction: row;
+        }
+        
+        .menu-icon span {
+          font-size: 25px;
+          font-weight: bold;
+          color: black;
+          cursor: pointer;
+          margin-left: 10px;
+        }
+        
+        .menu-icon .hhh {
+          position: fixed;
+          left: 40%;
+        }
+        
+        .sidebar {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 30px;
+          left: 0;
+          background-color: darkcyan;
+          overflow-x: hidden;
+          transition: 0.5s ease;
+          padding-top: 40px;
+        }
+        
+        .sidebar a {
+          background-color: #00ffff;
+          display: block;
+          margin: 30px 50px;
+          padding: 20px;
+          text-decoration: none;
+          font-size: 18px;
+          color: black;
+          transition: 0.3s ease;
+          border-radius: 10px;
+        }
+        
+        .sidebar a:hover {
+          background-color: #575757;
+        }
+        
+        .nav-link {
+            color: var(--white);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: var(--secondary-color);
+            padding-right: 25px;
+        }
+        
+        /* Contact page styling */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        
+        .contact-form h1 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+        
+        button[type="submit"] {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        
+        button[type="submit"]:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Contact information section */
+        .contact-info {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        
+        .contact-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .info-box h3 {
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+        }
+        
+        .info-box p {
+            line-height: 1.8;
+        }
+        
+        .info-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .info-box a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+                
+        .skin-footer {
+          background-color: #121212;
+          color: #ffffff;
+          padding: 30px 20px;
+          text-align: center;
+          font-family: 'Poppins', sans-serif;
+        }
+        
+        .footer-top {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1000px;
+          margin: auto;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #333;
+        }
+        
+        .footer-column {
+          flex: 1;
+          min-width: 250px;
+          margin: 10px 0;
+        }
+        
+        .footer-column p {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        
+        .footer-description {
+          font-size: 14px;
+          color: #bbbbbb;
+        }
+        
+        h4 {
+          font-size: 20px;
+          margin-bottom: 10px;
+          color: #8a67ff;
+        }
+        
+        .social-media {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          margin-top: 10px;
+        }
+        
+        .social-icon {
+          color: #ffffff;
+          font-size: 24px;
+          transition: 0.3s;
+        }
+        
+        .social-icon:hover {
+          color: #8a67ff;
+          transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+          margin-top: 20px;
+          font-size: 14px;
+          color: #bbbbbb;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1000px;
+          margin: auto;
+        }
+        
+        .copyright {
+          flex: 1;
+          text-align: center;
+        }
+        
+        .legal-links {
+          flex: 1;
+          text-align: center;
+        }
+        
+        .legal-links a {
+          color: #8a67ff;
+          text-decoration: none;
+          margin: 0 10px;
+          font-size: 16px;
+          transition: 0.3s;
+        }
+        
+        .legal-links a:hover {
+          text-decoration: underline;
+          color: #ffffff;
+        }
+        
+        /* Responsive design for smaller devices */
+        @media (max-width: 768px) {
+          .footer-top, .footer-bottom {
+              flex-direction: column;
+              text-align: center;
+          }
+          .legal-links {
+              margin-top: 10px;
+          }
+        }
+        
+        /* Responsive design adjustments for contact container */
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                margin: 30px auto;
+            }
+            .contact-form,
+            .contact-info {
+                padding: 25px;
+            }
+            .contact-form h1,
+            .contact-info h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="menu-icon" onclick="toggleNav(event)">
+            <span>&#9776;</span>
+            <span class="hhh">SkinPox</span>
+        </div>
+    </nav>
+  </header>
+  
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+     <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+     <a href="/diagnose" class="nav-link"><i class="fas fa-eye"></i> Diagnose</a>
+     <a href="/contact" class="nav-link"><i class="fas fa-person"></i> Contact</a>
+  </div>
+  
+  <main class="contact-page">
+      <div class="contact-container">
+          <section class="contact-form">
+              <h1><i class="fas fa-envelope"></i> Contact the Medical Team</h1>
+              
+              <form action="/submit-contact" method="POST">
+                  <div class="form-group">
+                      <label for="name">Full Name:</label>
+                      <input type="text" id="name" name="name" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="message">Message:</label>
+                      <textarea id="message" name="message" rows="5" required></textarea>
+                  </div>
+
+                  <button type="submit">
+                      <i class="fas fa-paper-plane"></i> Send Message
+                  </button>
+              </form>
+          </section>
+
+          <section class="contact-info">
+              <h2><i class="fas fa-map-marker-alt"></i> Contact Information</h2>
+              <div class="info-box">
+                  <h3>Address:</h3>
+                  <p>Yemen - Ibb - University Street</p>
+                  
+                  <h3>Email:</h3>
+                  <p><a href="mailto:emadaladeep775@gmail.com">emadaladeep775@gmail.com</a></p>
+
+                  <h3>WhatsApp:</h3>
+                  <p><a href="https://wa.me/967775914784">+967 775 914784</a></p>
+              </div>
+          </section>
+      </div>
+  </main>
+
+  <footer class="skin-footer">
+    <div class="footer-top">
+      <div class="footer-column">
+        <p>Skin Disease Diagnosis Site</p><br>
+        <p class="footer-description">
+          Advanced Skin Disease Diagnosis system using AI
+        </p>
+      </div>
+    
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <div class="social-media">
+          <a href="https://t.me/emad_aladeep" class="social-icon telegram" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://wa.me/967775914784" class="social-icon whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:emadaladeep775@gmail.com" class="social-icon email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="copyright">
+        All Rights reserved - Skin Disease Diagnosis System 2025 © 
+      </div>
+      <div class="legal-links">
+        <a href="/terms">Terms of Use</a>
+        <a href="/contact">Privacy Policy</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Toggle sidebar function
+    function toggleNav(event) {
+      event.stopPropagation();
+      var sidebar = document.getElementById("sidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "250px";
+      }
+    }
+    
+    // Close sidebar when clicking outside of it
+    document.addEventListener('click', function(event) {
+      var sidebar = document.getElementById("sidebar");
+      var menuIcon = document.querySelector('.menu-icon');
+      if (sidebar.style.width === "250px" && 
+          !event.target.closest('#sidebar') && 
+          !event.target.closest('.menu-icon')) {
+        sidebar.style.width = "0";
+      }
+    });
+  </script>
+</body>
+</html>

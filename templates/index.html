@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Image Diagnosis System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <style>
+      /* يمكن إضافة بعض التعديلات الخاصة بالـ Sidebar هنا إن لزم الأمر */
+      .sidebar {
+         transition: width 0.5s ease;
+         width: 0;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" onclick="toggleNav(event)">
+                <span>&#9776;</span>
+                <span class="hhh">SkinPox</span>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+       <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+       <a href="/diagnose" class="nav-link"><i class="fas fa-eye"></i> Diagnose</a>
+       <a href="/contact" class="nav-link"><i class="fas fa-person"></i> Contact</a>
+    </div>
+    
+    <div id="main-content">
+      <div class="alert-box">
+          <p>
+              <i class="warning-icon">!</i>
+              Warning: Please be cautious of contagious skin diseases like <strong>smallpox</strong>. Avoid direct contact with infected individuals and seek medical attention if you notice a rash or similar symptoms.
+          </p>
+          <span class="close-btn">&times;</span>
+      </div>
+  
+      <section class="ads-section">
+          <h1>Description of some common smallpox diseases</h1>
+          <div class="carousel-container">
+             <div class="carousel" id="carousel">
+                <div class="ad-item">
+                  <h2>Cowpox</h2>
+                  <div class="ad-info">
+                    <img src="./static/imgs/cowpox.jpg" alt="cowpox">
+                    <p>
+                      <h4>Overview:</h4>
+                      Cowpox is a rare zoonotic disease caused by the cowpox virus, which is closely related to the vaccinia virus. It primarily affects animals, such as cows and rodents, but can be transmitted to humans through direct contact with infected animals. Historically, cowpox was used to develop the first smallpox vaccine.
+                      <br><br>
+                      <h4>Symptoms:</h4>
+                      Localized skin lesions and mild flu-like symptoms.
+                      <br><br>
+                      <h4>Treatment:</h4>
+                      Usually self-limiting with supportive care. Antibiotics for secondary infections if needed.
+                    </p>
+                  </div>
+                </div>
+                <div class="ad-item">
+                  <h2>Smallpox</h2>
+                  <div class="ad-info">
+                      <img src="./static/imgs/vaccinia.png" alt="vaccinia">
+                      <p>
+                        <h4>Overview:</h4>
+                        Smallpox is a highly contagious and deadly disease caused by the variola virus. It was one of the most devastating diseases until its global eradication in 1980 due to an effective worldwide vaccination campaign. Smallpox has no known animal reservoir and is only transmitted between humans.
+                        <br><br>
+                        <h4>Symptoms:</h4>
+                        Fever, fatigue, headache, and a rash that turns into fluid-filled bumps and scabs.
+                        <br><br>
+                        <h4>Treatment:</h4>
+                        No specific treatment; supportive care and vaccination are key. Antiviral drugs like tecovirimat can be used.
+                      </p>
+                  </div>
+                </div>
+  
+                <div class="ad-item">
+                  <h2>Chickenpox</h2>
+                  <div class="ad-info">
+                      <img src="./static/imgs/Chickenpox.png" alt="chickenpox">
+                      <p>
+                        <h4>Overview:</h4>
+                        Chickenpox is a highly contagious disease caused by the varicella-zoster virus (VZV). It primarily affects children but can also occur in adults. Chickenpox is generally a mild disease in children but can be severe in adults or immunocompromised individuals.
+                        <br><br>
+                        <h4>Symptoms:</h4>
+                        Fever, fatigue, and an itchy rash that forms blisters and scabs.
+                        <br><br>
+                        <h4>Treatment:</h4>
+                        Symptomatic relief with fever reducers and antihistamines; acyclovir for high-risk cases. Vaccination is essential for prevention.
+                      </p>
+                  </div>
+                </div>
+  
+                <div class="ad-item">
+                  <h2>Monkeypox</h2>
+                  <div class="ad-info">
+                      <img src="./static/imgs/monkeypox.jpg" alt="monkeypox">
+                      <p>
+                        <h4>Overview:</h4>
+                        Monkeypox is a viral zoonosis caused by the monkeypox virus, part of the same family as smallpox. It primarily occurs in Central and West Africa, though cases have been reported outside of these regions in recent years. Monkeypox is typically less severe than smallpox but can still cause significant illness.
+                        <br><br>
+                        <h4>Symptoms:</h4>
+                        Fever, headache, muscle aches, swollen lymph nodes, and a rash that progresses to pustules.
+                        <br><br>
+                        <h4>Treatment:</h4>
+                        Supportive care and antiviral drugs like tecovirimat. Smallpox vaccine can provide protection.
+                      </p>
+                  </div>
+                </div>
+             </div>
+             <div class="navigation-buttons">
+                <button class="nav-btn" id="prevBtn">&#8249;</button>
+                <button class="nav-btn" id="nextBtn">&#8250;</button>
+             </div>
+          </div>
+      </section>
+    </div>
+  
+    <footer class="skin-footer">
+      <div class="footer-top">
+         <div class="footer-column">
+            <p>Skin Disease Diagnosis Site</p><br>
+            <p class="footer-description">
+               Advanced Skin Disease Diagnosis system using AI
+            </p>
+         </div>
+      
+         <div class="footer-column">
+            <h4>Contact</h4>
+            <div class="social-media">
+               <a href="https://t.me/emad_aladeep" class="social-icon telegram" target="_blank">
+                  <i class="fab fa-telegram"></i>
+               </a>
+               <a href="https://wa.me/967775914784" class="social-icon whatsapp" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+               </a>
+               <a href="mailto:emadaladeep775@gmail.com" class="social-icon email">
+                  <i class="fas fa-envelope"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+    
+      <div class="footer-bottom">
+         <div class="copyright">
+            All Rights reserved - Skin Disease Diagnosis System 2025 © 
+         </div>
+         <div class="legal-links">
+            <a href="/terms">Terms of Use</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/contact">Contact Us</a>
+         </div>
+      </div>
+    </footer>
+  
+    <script>
+      // دالة تبديل عرض الـ Sidebar
+      function toggleNav(event) {
+         event.stopPropagation();
+         var sidebar = document.getElementById("sidebar");
+         if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+         } else {
+            sidebar.style.width = "250px";
+         }
+      }
+      
+      // إغلاق الـ Sidebar عند النقر خارجها
+      document.addEventListener('click', function(event) {
+         var sidebar = document.getElementById("sidebar");
+         var menuIcon = document.querySelector('.menu-icon');
+         if (sidebar.style.width === "250px" && 
+             !event.target.closest('#sidebar') && 
+             !event.target.closest('.menu-icon')) {
+            sidebar.style.width = "0";
+         }
+      });
+    </script>
+    <script src="./static/main.js"></script>
+</body>
+</html>
